@@ -1,2 +1,2 @@
 #!/bin/bash 
-cd /tmp && mkdir var && cd var && cp /root/alx-system_engineering-devops/0x00-shell_basics/10-back /tmp/var && source ./10-back
+source ./10-back
