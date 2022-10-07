@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -name '*.html' -maxdepth 1 -mtime +365 -type f -exec cp "{}" ../
+cp -ru .'*.html' ../
