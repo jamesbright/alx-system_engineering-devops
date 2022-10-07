@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -acdpm --group-directories-first --indicator-style=slash --sort=WORD .
+ls -ilacpm 
