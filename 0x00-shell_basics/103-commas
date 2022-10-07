@@ -1,2 +1,3 @@
 #!/bin/bash
-ls -acpm 
+ls -acpm --group-directories-first | sort
+ 
