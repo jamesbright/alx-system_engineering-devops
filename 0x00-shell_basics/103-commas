@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -acpm --group-directories-first
+ls -apm --group-directories-first
