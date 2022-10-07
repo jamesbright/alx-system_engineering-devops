@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -apm --group-directories-first --sort=WORD
+ls -apmr --group-directories-first 
