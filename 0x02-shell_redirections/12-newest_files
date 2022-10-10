@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -printf "\n%AD %AT %p" | sort -k1.8n -k1.1n -k1 | sort -r | head
+find . -type f -printf "\n%AD %AT %p" | sort -k1.8n -k1.1n -k1 -r | head | cut -f3- -d' '
