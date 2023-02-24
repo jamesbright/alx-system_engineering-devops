@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Read and parse apache log file to extract IP and http status
+
+log_file=$(<apache-access.log)
+echo "$log_file" | awk '{print $1, $9}'
