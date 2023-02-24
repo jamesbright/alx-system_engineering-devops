@@ -2,5 +2,5 @@
 # display contents of /etc/password using IFS
 
 while IFS=: read -r user passwd uid gid info home shell; do
-  echo "The user $user is part of the $gid gang, lives in $home and rides $shell. User ID's place is protected by the passcode $passwd, more info about the user here: $info"
+  echo "The user $user is part of the $gid gang, lives in $home and rides $shell. $uid's place is protected by the passcode $passwd, more info about the user here: $info"
 done < /etc/passwd
