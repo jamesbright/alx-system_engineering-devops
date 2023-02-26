@@ -3,4 +3,4 @@
 # shows all processes for all users, including those which might not have a tty
 # Displays the processes in user oriented format
 
-ps axjf
+ps -a -x -u -f
