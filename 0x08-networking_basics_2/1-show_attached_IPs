@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Show all active IPv4 IP's on the current machine 
 
-ip addr | grep -oP '(?<=\binet )\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'
+ifconfig | grep "inet addr" | cut -d ":" -f2 | cut -d " " -f1
