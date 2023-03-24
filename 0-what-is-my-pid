@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-# Displays processof the running script
-
-echo "$$"
