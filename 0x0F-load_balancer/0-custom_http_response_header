@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# This script configures the nginx server to have a custom 404 page that
+# contains the string Ceci n'est pas une page.
+
+sudo apt update
+sudo apt install nginx -y
+echo 'Hello World!' | sudo tee /var/www/html/index.nginx-debian.html > /dev/null
+echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/custom_404.html
+sudo sed -i '/listen 80 default_server/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+sudo sed -i '/listen 80 default_server/a error_page 404 /custom_404.html; location = /custom_404.html {root /usr/share/nginx/html;\n internal;}' /etc/nginx/sites-available/default
+new_string2="http {\\n\\tadd_header X-Served-By \"$HOSTNAME\";"
+sudo sed -i "s/http {/$new_string2/" /etc/nginx/nginx.conf
+sudo service nginx start
+
