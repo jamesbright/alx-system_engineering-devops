@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Nginx web server debugging
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+service nginx restart
