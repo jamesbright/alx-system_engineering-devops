@@ -34,5 +34,6 @@ def main():
     with open("{}.json".format(user_id), 'w', encoding='utf-8') as fp:
         json.dump(dict_, fp)
 
+
 if __name__ == "__main__":
     main()
