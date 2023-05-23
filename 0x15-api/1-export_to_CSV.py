@@ -2,9 +2,10 @@
 """ Returns an employees todo
     list using the employee ID
 """
+import csv
+import json
 import requests
 import sys
-import csv
 
 
 def main():
@@ -15,8 +16,11 @@ def main():
     user = 'https://jsonplaceholder.typicode.com/users/{}'.format(user_id)
     todos = 'https://jsonplaceholder.typicode.com/todos/?userId={}'\
         .format(user_id)
-    user_name = requests.get(user).json().get('name')
-    todo_request = requests.get(todos).json()
+    user_request = requests.get(user)
+    user = json.loads(user_request.text)
+    user_name = user.get('name')
+    todo_request = requests.get(todos)
+    todo_request = json.loads(todo_request.text)
 
     with open('{}.csv'.format(user_id),
               'w', newline='', encoding='utf-8') as fp:
