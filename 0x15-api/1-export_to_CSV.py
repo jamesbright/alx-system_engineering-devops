@@ -18,7 +18,7 @@ def main():
         .format(user_id)
     user_request = requests.get(user)
     user = json.loads(user_request.text)
-    user_name = user.get('name')
+    user_name = user.get('username')
     todo_request = requests.get(todos)
     todo_request = json.loads(todo_request.text)
 
