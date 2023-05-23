@@ -23,7 +23,7 @@ typicode.com/todos?userId={}'.format(user.get('id')))
         todos = json.loads(todos.text)
         for task in todos:
             task_d = {}
-            task_d['username'] = task.get('username')
+            task_d['username'] = user.get('username')
             task_d['task'] = task.get('title')
             task_d['completed'] = task.get('completed')
             task_list.append(task_d)
