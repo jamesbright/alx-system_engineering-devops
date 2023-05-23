@@ -11,8 +11,10 @@ def main():
     """
 
     user_id = sys.argv[1]
-    user = 'https://jsonplaceholder.typicode.com/users/{}'.format(user_id)
-    todos = 'https://jsonplaceholder.typicode.com/todos/?userId={}'.format(user_id)
+    user = 'https://jsonplaceholder.typicode.\
+    com/users/{}'.format(user_id)
+    todos = 'https://jsonplaceholder.typicode.\
+    com/todos/?userId={}'.format(user_id)
     name_request = requests.get(user).json().get('name')
     todo_request = requests.get(todos).json()
     tasks = [task.get('title') for task in todo_request
