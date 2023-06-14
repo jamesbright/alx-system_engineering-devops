@@ -12,4 +12,14 @@ server {
         include proxy_params;
 	proxy_pass http://localhost:5001/number_odd_or_even;
     }
+
+    location /api/ {
+        include proxy_params;
+	proxy_pass http://localhost:5002/api/;
+    }
+
+    location / {
+        include proxy_params;
+	proxy_pass http://localhost:5003/;
+    }
 }
